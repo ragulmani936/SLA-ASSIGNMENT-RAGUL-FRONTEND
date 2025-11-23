@@ -1,0 +1,120 @@
+/* Global Styling */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+/* Box Model Practice */
+.box {
+    width: 200px;
+    height: 80px;
+    background: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #777;
+}
+
+/* 1. Simple Box */
+.simple-box {
+    background: #e1ffee;
+}
+
+/* 2. Margin Comparison */
+.margin-small {
+    margin: 10px;
+}
+.margin-large {
+    margin: 40px;
+}
+
+/* 3. Padding Demo */
+.padding-demo {
+    padding: 30px;
+    background: #fff0cc;
+}
+
+/* 4. Border Styles */
+.border-solid { border-style: solid; }
+.border-dashed { border-style: dashed; }
+.border-double { border-style: double; }
+
+/* 5. Box-Sizing */
+.content-box {
+    box-sizing: content-box;
+    background: #d0f0ff;
+}
+
+.border-box {
+    box-sizing: border-box;
+    background: #ffd0d0;
+}
+
+/* 6. Profile Card */
+.profile-card {
+    border: 2px solid #555;
+    width: 250px;
+    padding: 20px;
+    margin-top: 10px;
+    background: #f7f7f7;
+}
+
+/* 7. Pricing Table */
+.pricing-container {
+    display: flex;
+    gap: 20px;
+}
+
+.price-card {
+    padding: 20px;
+    border: 3px solid;
+    width: 150px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.basic { border-color: blue; }
+.pro { border-color: green; }
+
+/* 8. Notification Banner */
+.notification {
+    background: #d4edda;
+    border-left: 6px solid #28a745;
+    padding: 15px;
+    width: 300px;
+}
+
+/* 9. Product Tile Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    gap: 20px;
+}
+
+.tile {
+    padding: 20px;
+    background: #e8e8ff;
+    border: 2px solid #666;
+}
+
+/* 10. Uniform Border-Box Layout */
+.uniform-layout {
+    display: flex;
+    gap: 15px;
+}
+
+.u-box {
+    width: 120px;
+    padding: 20px;
+    background: #ffeedd;
+    border: 2px solid #aa5500;
+    box-sizing: border-box;
+}
