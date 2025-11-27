@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Tasks</title>
+    <style>
+
+.styled-heading {
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-shadow: 2px 2px 4px gray;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.styled-para {
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    padding: 10px 20px;
+}
+
+
+.box-container {
+    display: flex;
+    gap: 15px;
+    margin: 20px;
+}
+
+.box {
+    width: 120px;
+    height: 120px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+
+.box1 { background-color: #3498db; }        
+.box2 { background-color: rgb(255, 99, 71); } 
+.box3 { background-color: hsl(120, 60%, 40%); } 
+.box4 { background-color: violet; }        
+
+
+.gradient-section {
+    margin: 30px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff7f50, #ff1493);
+    border-radius: 10px;
+}
+
+
+.fixed-box {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: black;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+    </style>
+</head>
+<body>
+    <h1 class="styled-heading">Welcome to CSS Tasks</h1>
+
+    <p class="styled-para">
+        This is a paragraph styled with custom fonts, letter spacing, and line height.
+    </p>
+
+    <div class="box-container">
+        <div class="box box1">HEX Color</div>
+        <div class="box box2">RGB Color</div>
+        <div class="box box3">HSL Color</div>
+        <div class="box box4">Named Color</div>
+    </div>
+
+    <section class="gradient-section">
+        Gradient Background Section
+    </section>
+
+    <div class="fixed-box">
+        Fixed Box
+    </div>
+</body>
+</html>

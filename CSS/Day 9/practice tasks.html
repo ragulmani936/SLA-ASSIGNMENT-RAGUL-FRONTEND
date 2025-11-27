@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felxbox</title>
+    <!-- 1.Create a horizontal navigation -->
+     <style>
+        nav{
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+     }
+     </style>
+
+     <!-- 2.Make a 3-item card row -->
+      <style>
+        .cards{
+            display: flex;
+            gap: 20;
+        }
+
+        .card{
+            flex: 1;
+            color: blue;
+            background-color: #eae4e4;
+            padding: 20px;
+            border-radius: 8px;
+        }
+      </style>
+
+      <!-- 3.Build a toolbar -->
+
+      <style>
+        .toolbar {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            background: #089b32;
+            padding: 10px;
+        }
+      </style>
+
+      <!-- 4.Stack Three Blocks-->
+       <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            background: #d31ec7;
+        }
+
+        .block {
+            padding: -2px;
+            margin: 10px;
+            background: #b60bdd;
+        }
+       </style>
+
+       <!-- 5.Fix Overflowing Text-->
+        <style>
+            .container{
+                display: flex;
+                width: 300px;
+                border: 1px solid #aaa;
+            }
+            .item {
+                padding: 10px;
+                background: #b0f406;
+            }
+
+            .text-box {
+                flex: 1;
+                min-width: 0;
+                background: #6d8f1e;
+                padding: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        </style>
+</head>
+<body>
+    <!-- 1.Create a horizontal navigation -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact Us</a>
+    </nav>
+
+    <!-- 2.Make a 3-item card row -->
+     <div class="cards">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+     </div>
+
+
+     <!-- 3.Build a toolbar -->
+
+     <div class="toolbar">
+        <button>Left</button>
+        <button>Center</button>
+        <button>Right</button>
+     </div>
+
+     <!-- 4.Stack Three Blocks-->
+      <div class="container">
+        <div class="block">Block 1</div>
+        <div class="block">Block 2</div>
+        <div class="block">Block 3</div>
+      </div>
+
+      <!-- 5.Fix Overflowing Text-->
+       <div class="container">
+        <div class="item">ICON</div>
+        <div class="text-box">
+            This is a very very long text. 
+        </div>
+       </div>
+</body>
+</html>
