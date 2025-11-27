@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Practice Tasks</title>
+
+  <style>
+    
+    .full-block {
+      background: lightblue;
+      padding: 10px;
+      width: 100%;
+      display: block;
+    }
+    .inline-item {
+      color: blue;
+      display: inline;
+      font-weight: bold;
+    }
+
+    
+    .float-img {
+      float: left;
+      width: 150px;
+      margin: 10px;
+    }
+
+    
+    .flex-evenly {
+      display: flex;
+      justify-content: space-evenly;
+      background: #f8d7da;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    
+    .flex-align {
+      display: flex;
+      height: 120px;
+      background: #d1e7dd;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .flex-align div {
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #000;
+    }
+    .special-align {
+      align-self: flex-end;
+      background: #ffeb3b;
+    }
+
+    
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 10px;
+      margin-top: 30px;
+      background: #e7e1ff;
+      padding: 10px;
+    }
+    .grid-2col div {
+      background: #ffffff;
+      padding: 15px;
+      border: 1px solid #000;
+    }
+  </style>
+
+</head>
+<body>
+
+  
+  <h2>Block + Inline Example</h2>
+  <div class="full-block">
+    This is a block element taking full width 
+    <span class="inline-item">and this is an inline element.</span>
+  </div>
+
+  <hr>
+
+  
+  <h2>Float Image Left</h2>
+  <img src="C:\Users\RAGUL M\Desktop\College Memories\IMG_20230226_172751.jpg" class="float-img" />
+  <p>
+    I am Ragul M and i completed my bachelor degree in Saveetha Engineering <br>
+    Now i am currently doing course Python Fullstack in SLA.
+  </p>
+
+  <div style="clear: both;"></div>
+
+  <hr>
+
+ 
+  <h2>Flex Items Spaced Evenly</h2>
+  <div class="flex-evenly">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </div>
+
+  
+  <h2>Flex Item With align-self</h2>
+  <div class="flex-align">
+    <div>Box A</div>
+    <div class="special-align">Box B</div>
+    <div>Box C</div>
+  </div>
+
+  
+  <h2>2-Column Grid</h2>
+  <div class="grid-2col">
+    <div>Column 1</div>
+    <div>Column 2</div>
+  </div>
+
+</body>
+</html>

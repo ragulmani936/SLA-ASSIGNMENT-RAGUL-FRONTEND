@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Practice Tasks</title>
+
+  <style>
+    /* ------------------------------
+       1. Inline-block Navigation Bar
+    ------------------------------- */
+    nav {
+      background: #333;
+      padding: 10px;
+    }
+    nav a {
+      display: inline-block;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background: #555;
+    }
+
+    /* ------------------------------
+       2. Float-based Product Cards
+    ------------------------------- */
+    .products {
+      width: 100%;
+    }
+    .product {
+      float: left;
+      width: 30%;
+      margin: 1%;
+      padding: 10px;
+      background: #f7f7f7;
+      border: 1px solid #ccc;
+    }
+
+    /* Clearfix */
+    .products::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* ------------------------------
+       3. Flexbox Equal Spacing Cards
+    ------------------------------- */
+    .flex-row {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .flex-card {
+      background: #e0f7fa;
+      padding: 20px;
+      flex: 1;
+      border-radius: 6px;
+    }
+
+    /* ------------------------------
+       4. Grid Photo Gallery
+    ------------------------------- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    /* ------------------------------
+       5. Full Page Grid Layout
+    ------------------------------- */
+    .page-layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 70px auto 70px;
+      grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+      height: 100vh;
+      margin-top: 30px;
+      border: 3px solid #000;
+    }
+
+    .header { grid-area: header; background: #b3e5fc; padding: 20px; }
+    .sidebar { grid-area: sidebar; background: #c8e6c9; padding: 20px; }
+    .content { grid-area: content; background: #fff9c4; padding: 20px; }
+    .footer { grid-area: footer; background: #ffe0b2; padding: 20px; }
+  </style>
+</head>
+
+<body>
+
+  <h1>CSS Layout Practice — All Tasks</h1>
+
+  <!-- 1. Navigation bar -->
+  <h2>1. Inline-block Navigation Bar</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- 2. Float-based Product Cards -->
+  <h2>2. Float + Clearfix Product Cards</h2>
+  <div class="products">
+    <div class="product">Product 1</div>
+    <div class="product">Product 2</div>
+    <div class="product">Product 3</div>
+  </div>
+
+  <!-- 3. Flexbox Cards -->
+  <h2>3. Responsive Flexbox Card Row</h2>
+  <div class="flex-row">
+    <div class="flex-card">Card A</div>
+    <div class="flex-card">Card B</div>
+    <div class="flex-card">Card C</div>
+  </div>
+
+  <!-- 4. Photo gallery -->
+  <h2>4. Grid Photo Gallery</h2>
+  <div class="gallery">
+    <img src="1.png" />
+    <img src="2.png" />
+    <img src="3.jpg" />
+    <img src="4.jpg" />
+    <img src="5.jpg" />
+    <img src="6.png" />
+  </div>
+
+  <!-- 5. Full page grid layout -->
+  <h2>5. Full-page Layout — Grid Template Areas</h2>
+  <div class="page-layout">
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="content">Main Content Area</div>
+    <div class="footer">Footer</div>
+  </div>
+
+</body>
+</html>
