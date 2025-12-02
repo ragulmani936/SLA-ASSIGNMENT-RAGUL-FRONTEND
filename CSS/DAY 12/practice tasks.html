@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CSS Layout Examples</title>
+
+<style>
+/* --- 1. Horizontal Navigation --- */
+.nav {
+  height: 60px;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* --- 2. Three-Item Card Row --- */
+.card-row {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+.card {
+  flex: 1;
+  padding: 20px;
+  background: #f10606;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* --- 3. Toolbar with Left, Center, Right --- */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+.toolbar .center {
+  margin: 0 auto; 
+}
+
+/* --- 4. Vertical Centered Stack --- */
+.section-title {
+  font-size: 22px;
+  margin: 20px;
+  font-weight: bold;
+}
+
+.viewport-container {
+  height: 300px; 
+  border: 1px solid #aaa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.box {
+  background: #5ff204;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+}
+
+/* --- 5. Fix Overflowing Text in Flex Item --- */
+.flex-wrapper {
+  display: flex;
+  width: 600px;
+  border: 1px solid #aaa;
+  margin: 20px;
+}
+.sidebar {
+  width: 150px;
+  background: #ececec;
+  padding: 10px;
+}
+.content {
+  flex: 1;
+  min-width: 0; 
+  padding: 10px;
+  background: #fafafa;
+  overflow: hidden;
+}
+</style>
+
+</head>
+<body>
+
+<!-- 1. Navigation -->
+<nav class="nav">
+  <a href="#">Home</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</nav>
+
+<!-- 2. Card Row -->
+<h2 class="section-title">3-Item Equal Width Card Row</h2>
+<div class="card-row">
+  <div class="card">Card 1</div>
+  <div class="card">Card 2</div>
+  <div class="card">Card 3</div>
+</div>
+
+<!-- 3. Toolbar -->
+<h2 class="section-title">Toolbar Layout</h2>
+<div class="toolbar">
+  <button>Left</button>
+  <button class="center">Center</button>
+  <button>Right</button>
+</div>
+
+<!-- 4. Vertical Center Using Flex -->
+<h2 class="section-title">Vertical Centered Stack</h2>
+<div class="viewport-container">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+</div>
+
+<!-- 5. Fix Overflow with min-width -->
+<h2 class="section-title">Fix Overflow in Flex Items</h2>
+<div class="flex-wrapper">
+  <div class="sidebar">Sidebar</div>
+  <div class="content">
+    This is a very long text block inside a flexible container. Normally it would overflow or push the layout, but using min-width: 0 fixes the issue, allowing proper wrapping.
+  </div>
+</div>
+
+</body>
+</html>
