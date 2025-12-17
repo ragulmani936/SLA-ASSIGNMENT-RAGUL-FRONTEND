@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <button id = "btn">Click Me</button>
+    <div id="box" style="width: 100px; height: 100px; background-color: red;">Box</div>
+
+    <script>
+        const button = document.getElementById("btn")
+        const box = document.getElementById("box")
+
+
+
+
+        document.getElementById("btn").addEventListener("dblclick", ()=> {
+            alert("Button has been clicked")
+        })
+    </script>
+</body>
+</html>
