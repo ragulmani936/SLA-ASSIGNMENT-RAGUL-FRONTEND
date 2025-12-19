@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"
+    name="number"
+    id="num"
+    placeholder="Enter a Number"/>
+
+    <button onclick="checkNumber">Check</button>
+
+    <p id = "output"></p>
+
+
+    <script>
+        function checkNumber() {
+            try {
+                let value = document.getElementById("num").value
+                if(value === ""){
+                    throw new Error("Input cannot be empty")
+                }
+
+                if(isNaN(value)) {
+                    throw new Error("Only numbers are allowed")
+                }
+
+                value = Number(value)
+
+                if (value < 0) {
+                    throw new Error("Number must be positive")
+                }
+
+                document.getElementById("output").innerText = "Valid Number"
+            } catch (error) {
+                document.getElementById("output").innerText = error.message
+            }
+            
+        }
+    </script>
+</body>
+</html>
