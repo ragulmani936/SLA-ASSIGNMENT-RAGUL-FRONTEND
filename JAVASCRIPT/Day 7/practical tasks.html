@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Practice</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .dark {
+      background-color: #121212;
+      color: white;
+    }
+
+    button {
+      margin: 5px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Dark Mode -->
+  <button id="darkBtn">Toggle Dark Mode</button>
+
+  <hr>
+
+  <!-- 2. Live Text Input -->
+  <input type="text" id="liveInput" placeholder="Type something...">
+  <p id="liveText"></p>
+
+  <hr>
+
+  <!-- 3. To-Do List -->
+  <input type="text" id="todoInput" placeholder="Add task">
+  <button id="addTask">Add</button>
+  <ul id="todoList"></ul>
+
+  <hr>
+
+  <!-- 4. Color Change Buttons -->
+  <button class="colorBtn" data-color="red">Red</button>
+  <button class="colorBtn" data-color="green">Green</button>
+  <button class="colorBtn" data-color="blue">Blue</button>
+
+  <hr>
+
+  <!-- 5. innerHTML Formatting -->
+  <button id="formatBtn">Show Formatted Text</button>
+  <div id="output"></div>
+
+  <script>
+    // 1. Dark Mode Toggle
+    document.getElementById("darkBtn").addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+
+    // 2. Live Input Text Update
+    document.getElementById("liveInput").addEventListener("input", (e) => {
+      document.getElementById("liveText").textContent = e.target.value;
+    });
+
+    // 3. To-Do List App
+    document.getElementById("addTask").addEventListener("click", () => {
+      let taskText = document.getElementById("todoInput").value;
+      if (taskText === "") return;
+
+      let li = document.createElement("li");
+      li.textContent = taskText;
+
+      li.addEventListener("click", () => {
+        document.getElementById("todoList").removeChild(li);
+      });
+
+      document.getElementById("todoList").appendChild(li);
+      document.getElementById("todoInput").value = "";
+    });
+
+    // 4. Multiple Buttons Changing Colors
+    document.querySelectorAll(".colorBtn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.body.style.backgroundColor = btn.dataset.color;
+      });
+    });
+
+    // 5. innerHTML for Formatted Content
+    document.getElementById("formatBtn").addEventListener("click", () => {
+      document.getElementById("output").innerHTML =
+        "<b>Bold Text</b> and <i>Italic Text</i> inserted dynamically!";
+    });
+  </script>
+
+</body>
+</html>

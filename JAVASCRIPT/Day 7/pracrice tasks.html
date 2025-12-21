@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manupulation</title>
+</head>
+<body>
+    <!-- 1.Heading-->
+    <h1 id="heading">Heading</h1>
+    <button onclick="changeHeading()">Change</button>
+
+    <!--2.Change paragraph color-->
+    <p class="para">This is a paragraph.</p>
+    <button onclick="changeParagraph()">Change paragraph color</button>
+
+    <!-- 3. Add and Remove items-->
+     <ul id="mylist">
+        <li>Item 1</li>
+     </ul>
+     <button onclick="addItems()">Add Items</button>
+     <button onclick="removeFirstItems()">Remove First Element</button>
+
+     <!-- 5. Change background color of page-->
+      <button onclick="changeColor()">Click</button>
+    <script>
+        // 1. change the heading
+        function changeHeading() {
+            document.getElementById("heading").textContent = "Heading Changed!"
+        }
+
+        // 2. change paragraph color
+        function changeParagraph() {
+            document.querySelector(".para").style.color = "Red"
+        }
+
+        // 3. Add items
+        function addItems () {
+            let list = document.getElementById("mylist")
+
+            for (let i = 2; i <= 4; i++) {
+                let li = document.createElement("li")
+                li.textContent = "Item" + i
+                list.appendChild(li)
+            }
+        }
+
+        // 4. Remove Items
+        function removeFirstItems () {
+            let list = document.getElementById("mylist")
+
+            if(list.firstElementChild) {
+                list.removeChild(list.firstElementChild)
+            }
+        }
+
+        // 5.Change background color of page
+        function changeColor() {
+            document.body.style.backgroundColor = "Skyblue"
+        }
+    </script>
+</body>
+</html>
