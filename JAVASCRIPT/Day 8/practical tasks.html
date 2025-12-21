@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Playground</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    /* Mouse box */
+    #mouseBox {
+      width: 200px;
+      height: 120px;
+      background: lightgray;
+      text-align: center;
+      line-height: 120px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    /* Event bubbling demo */
+    #parent {
+      padding: 30px;
+      background: #ddd;
+    }
+
+    #child {
+      padding: 30px;
+      background: #bbb;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Mouse Event Playground -->
+  <h3>1. Mouse Event Playground</h3>
+  <div id="mouseBox">Interact with me</div>
+
+  <hr>
+
+  <!-- 2. Keyboard Tracker -->
+  <h3>2. Keyboard Tracker</h3>
+  <p id="keyInfo">Press any key...</p>
+
+  <hr>
+
+  <!-- 3. Live Form Preview -->
+  <h3>3. Live Form Preview</h3>
+  <input type="text" id="name" placeholder="Name"><br><br>
+  <input type="email" id="email" placeholder="Email"><br><br>
+
+  <p><b>Preview:</b></p>
+  <p>Name: <span id="pName"></span></p>
+  <p>Email: <span id="pEmail"></span></p>
+
+  <hr>
+
+  <!-- 4. Form Validation -->
+  <h3>4. Form Validation System</h3>
+  <form id="myForm">
+    <input type="text" id="fname" placeholder="First Name"><br><br>
+    <input type="text" id="lname" placeholder="Last Name"><br><br>
+    <button type="submit">Submit</button>
+    <p class="error" id="errorMsg"></p>
+  </form>
+
+  <hr>
+
+  <!-- 5. Event Bubbling vs Capturing -->
+  <h3>5. Event Bubbling vs Capturing</h3>
+  <div id="parent">
+    Parent
+    <div id="child">Child</div>
+  </div>
+
+  <script>
+    /* 1. Mouse Events */
+    const box = document.getElementById("mouseBox");
+
+    box.addEventListener("click", () => {
+      box.style.backgroundColor = "lightgreen";
+      box.textContent = "Clicked";
+    });
+
+    box.addEventListener("dblclick", () => {
+      box.style.backgroundColor = "orange";
+      box.textContent = "Double Clicked";
+    });
+
+    box.addEventListener("mouseover", () => {
+      box.style.backgroundColor = "lightblue";
+      box.textContent = "Hovered";
+    });
+
+    /* 2. Keyboard Tracker */
+    document.addEventListener("keydown", (e) => {
+      document.getElementById("keyInfo").textContent =
+        `Key: ${e.key} | Key Code: ${e.keyCode}`;
+    });
+
+    /* 3. Live Form Preview */
+    document.getElementById("name").addEventListener("input", e => {
+      document.getElementById("pName").textContent = e.target.value;
+    });
+
+    document.getElementById("email").addEventListener("change", e => {
+      document.getElementById("pEmail").textContent = e.target.value;
+    });
+
+    /* 4. Form Validation */
+    document.getElementById("myForm").addEventListener("submit", e => {
+      e.preventDefault();
+
+      let fname = document.getElementById("fname").value.trim();
+      let lname = document.getElementById("lname").value.trim();
+      let error = document.getElementById("errorMsg");
+
+      if (fname === "" || lname === "") {
+        error.textContent = "All fields are required!";
+      } else {
+        error.textContent = "Form submitted successfully!";
+        error.style.color = "green";
+      }
+    });
+
+    /* 5. Bubbling vs Capturing */
+    document.getElementById("parent").addEventListener(
+      "click",
+      () => console.log("Parent clicked (Capturing)"),
+      true
+    );
+
+    document.getElementById("child").addEventListener(
+      "click",
+      () => console.log("Child clicked (Capturing)"),
+      true
+    );
+
+    document.getElementById("parent").addEventListener(
+      "click",
+      () => console.log("Parent clicked (Bubbling)")
+    );
+
+    document.getElementById("child").addEventListener(
+      "click",
+      () => console.log("Child clicked (Bubbling)")
+    );
+  </script>
+
+</body>
+</html>

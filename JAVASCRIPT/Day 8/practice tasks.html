@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Events</title>
+  <style>
+    #box {
+      width: 200px;
+      height: 100px;
+      background-color: lightgray;
+      margin: 15px 0;
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Click Event -->
+  <button id="alertBtn">Click Me</button>
+
+  <hr>
+
+  <!-- 2. Mouseover & Mouseout -->
+  <div id="box">Hover over me</div>
+
+  <hr>
+
+  <!-- 3. Keydown Event -->
+  <p>Press any key (check console)</p>
+
+  <hr>
+
+  <!-- 4. Input Event -->
+  <input type="text" id="liveInput" placeholder="Type here">
+  <p id="displayText"></p>
+
+  <hr>
+
+  <!-- 5. Prevent Form Submission -->
+  <form id="myForm">
+    <input type="text" placeholder="Enter name">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // 1. Click event - alert
+    document.getElementById("alertBtn").addEventListener("click", () => {
+      alert("Button clicked!");
+    });
+
+    // 2. Mouseover & Mouseout events
+    const box = document.getElementById("box");
+
+    box.addEventListener("mouseover", () => {
+      box.style.backgroundColor = "lightblue";
+    });
+
+    box.addEventListener("mouseout", () => {
+      box.style.backgroundColor = "lightgray";
+    });
+
+    // 3. Keydown event
+    document.addEventListener("keydown", (event) => {
+      console.log("Key pressed:", event.key);
+    });
+
+    // 4. Input event - live display
+    document.getElementById("liveInput").addEventListener("input", (event) => {
+      document.getElementById("displayText").textContent = event.target.value;
+    });
+
+    // 5. Prevent form submission
+    document.getElementById("myForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      alert("Form submission prevented!");
+    });
+  </script>
+
+</body>
+</html>
